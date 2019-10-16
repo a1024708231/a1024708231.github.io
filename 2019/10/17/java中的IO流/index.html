@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Collections工具类的使用 | Hexo</title>
+  <title>java中的IO流 | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="Collections工具类的使用 | Hexo">
+  <meta name="description" content="java中的IO流 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="java中Map、Conllection的迭代器迭代器IteratorIterator是java.lang包中自带的接口，被Collection继承。 Iterator只能向后遍历，不能向前遍历。 Iterator常用方法iterator()：要求容器返回一个Iterator对象 next()：第一次调用时返回第一个元素，以后调用发那会下一个元素。 hasNext()：检查序列中是否还有元素。 r">
 <meta property="og:type" content="article">
@@ -225,9 +225,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-Collections工具类的使用" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java中的IO流" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Collections工具类的使用</h1>
+        <h1 class="article-title">java中的IO流</h1>
     
     <div class="article-meta">
         
@@ -237,7 +237,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-16 03:15:08'>2019-10-16 02:36</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-17 03:45:34'>2019-10-17 01:10</time>
         
     </div>
     <div class="article-meta">
@@ -259,7 +259,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Collections工具类的使用"><span class="toc-text">Collections工具类的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中的IO流"><span class="toc-text">Java中的IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类："><span class="toc-text">分类：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#按照流的方向："><span class="toc-text">按照流的方向：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按照流的处理数据："><span class="toc-text">按照流的处理数据：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按照功能分类："><span class="toc-text">按照功能分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、File"><span class="toc-text">一、File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#路径说明："><span class="toc-text">路径说明：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件夹"><span class="toc-text">文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历文件夹"><span class="toc-text">遍历文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#递归："><span class="toc-text">递归：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四个抽象接口"><span class="toc-text">四个抽象接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本操作步骤"><span class="toc-text">基本操作步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InputStream"><span class="toc-text">InputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OutputStream"><span class="toc-text">OutputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reader"><span class="toc-text">Reader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Writer"><span class="toc-text">Writer</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -275,14 +275,72 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Collections工具类的使用"><a href="#Collections工具类的使用" class="headerlink" title="Collections工具类的使用"></a>Collections工具类的使用</h1><p>Collections类是一个静态工具类，位于  java.util.Collections</p>
-<p>提供了对Set、List、Map进行排序、填充、查找元素的辅助方法。</p>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p>addAll(Collection , obj,obj2,obj3);向集合中添加多个元素</p>
-<p>shuffle(List);  随机打乱集合里面的顺序</p>
-<p>sort(List);  按照自然顺序排序  或者自定义类的排序规则：使用Comparable接口</p>
-<p>sort(List, Comparator); 安照指定的Comparator 规则比较器进行排序</p>
-<p>swap(List,int,int);  互换List中的指定索引位置元素</p>
-<p>binarySearch(List,obj);  查找List里的obj元素，折半查找（二分法查找），返回索引，无则返回-1</p>
+        <h1 id="Java中的IO流"><a href="#Java中的IO流" class="headerlink" title="Java中的IO流"></a>Java中的IO流</h1><p><img src="//a1024708231.github.io/2019/10/17/java中的IO流/java%E4%B8%AD%E7%9A%84IO%E6%B5%81%5C1186236-20170628084745102-439177264.png" alt></p>
+<h3 id="分类："><a href="#分类：" class="headerlink" title="分类："></a>分类：</h3><h4 id="按照流的方向："><a href="#按照流的方向：" class="headerlink" title="按照流的方向："></a>按照流的方向：</h4><p>输入流        输出流</p>
+<h4 id="按照流的处理数据："><a href="#按照流的处理数据：" class="headerlink" title="按照流的处理数据："></a>按照流的处理数据：</h4><p>字符流        字节流</p>
+<h4 id="按照功能分类："><a href="#按照功能分类：" class="headerlink" title="按照功能分类："></a>按照功能分类：</h4><p>节点流       处理流</p>
+<p>有FIle 和 ByteArray  的都是节点流    即文件和数组，直接数据源</p>
+<h2 id="一、File"><a href="#一、File" class="headerlink" title="一、File"></a>一、File</h2><h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>File src = new File(“D:\blog\sources\java中的IO流.md”); </p>
+<h4 id="路径说明："><a href="#路径说明：" class="headerlink" title="路径说明："></a>路径说明：</h4><p>绝对路径：”D:\blog\sources\java中的IO流.md”   </p>
+<p>相对路径：”sources\java中的IO流.md”</p>
+<p>父路径：”D:\blog\sources”</p>
+<p>————————————————</p>
+<p>getName（）    获得文件名</p>
+<p>getPath（）        new 的时候给的是相对路径就返回相对路径，是绝对路径就返回绝对路径</p>
+<p>getAbsoulutePath（）  返回绝对路径</p>
+<p>getParent（）        返回父路径，如果没有，返回null</p>
+<p>getParentFile（）  返回父对象</p>
+<p>exists（）        判断是否存在</p>
+<p>isFile（）        判断是否文件</p>
+<p>isDirectory（）     判断是否文件夹</p>
+<p>length（）   获取文件的长度，即文件的大小，如果是文件夹或者不存在则为0 </p>
+<p>createNewFile（）   创建文件，不能创建文件夹  </p>
+<p>delete（）  删除                </p>
+<pre><code>File src = new File(&quot;D:/blog/io.txt&quot;);
+boolean flag = src.createNewFile();//不存在则返回true创建成功，存在则返回false</code></pre><h3 id="文件夹"><a href="#文件夹" class="headerlink" title="文件夹"></a>文件夹</h3><p>mkdir（）  上级目录存在才可以创建    返回true或false</p>
+<p>mkdirs（）  上级目录存不存在都可以创建   返回true或false （推荐使用mkdirs）</p>
+<pre><code>File dir = new File();
+boolean flag = dir.mkdirs();</code></pre><p>list（）   返回下级文件的名称数组 String[]</p>
+<p>listFiles（）   返回下级文件对象数组  File[]</p>
+<p>listRoots（）  列出所有盘符，  C:\    D:\   E:\   F:\</p>
+<h3 id="遍历文件夹"><a href="#遍历文件夹" class="headerlink" title="遍历文件夹"></a>遍历文件夹</h3><pre><code class="java">public Static void main(){
+    File src = new File(&quot;D:\blog&quot;);
+    printName(src);
+}
+public Static void printName(File src){
+    System.out.println(src.getName());
+    if(src==null||!src.exists()){
+        return;
+    }else if(src.isDirectory()){
+        for(File s:src.listFiles()){
+            printName(s);     //递归调用自己
+        }
+    }
+}</code></pre>
+<h4 id="递归："><a href="#递归：" class="headerlink" title="递归："></a>递归：</h4><pre><code> 递归头：何时结束递归
+
+ 递归体：重复调用</code></pre><h2 id="四个抽象接口"><a href="#四个抽象接口" class="headerlink" title="四个抽象接口"></a>四个抽象接口</h2><h4 id="基本操作步骤"><a href="#基本操作步骤" class="headerlink" title="基本操作步骤"></a>基本操作步骤</h4><p>创建源：      从哪里输入到程序、从程序输出到哪里</p>
+<p>File src = new File(“test.txt”);</p>
+<p>选择流：InputStream is = new FileInputStream(src);//需要用try{}catch{}捕获异常</p>
+<p>操作：</p>
+<p>释放资源：</p>
+<h3 id="InputStream"><a href="#InputStream" class="headerlink" title="InputStream"></a>InputStream</h3><p>实现了Closeable接口，可以通知操作系统关闭资源   </p>
+<p>close（）</p>
+<p>read（）  一个字节一个字节的读  返回读到的字节</p>
+<p>read（byte[] b）   一段一段的读   从输入流中读一些字节，储存到缓冲数组byte[] b 中</p>
+<p>实现了Closeable接口，可以通知操作系统关闭资源</p>
+<h3 id="OutputStream"><a href="#OutputStream" class="headerlink" title="OutputStream"></a>OutputStream</h3><p>实现了Closeable接口，可以通知操作系统关闭资源。 </p>
+<p>close（）</p>
+<p>实现了Flushable， 可以用</p>
+<p>flush（）刷新</p>
+<p>write(byte[] b)    将b中的字节写入此输出流</p>
+<p>write（byte[] b, int off, int len） 从指定的字节数组b的一部分写入，从off开始读len个数</p>
+<h3 id="Reader"><a href="#Reader" class="headerlink" title="Reader"></a>Reader</h3><p>实现Readable接口，可读的</p>
+<p>read（） 读取一个字<strong>符</strong></p>
+<p>read（char()  c）  将字符读入char() c  中   返回长度</p>
+<h3 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h3><p>Appendable接口，可追加的写</p>
+<p>write(char[] c)</p>
+<p>write( )</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -296,12 +354,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Collections工具类的使用</p>
+    <p><span class="copy-title">文章标题:</span>java中的IO流</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-16, 02:36:08</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-16, 03:15:08</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/Collections工具类的使用/" title="Collections工具类的使用">http://a1024708231.github.io/2019/10/16/Collections工具类的使用/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-17, 01:10:02</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-17, 03:45:34</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/17/java中的IO流/" title="java中的IO流">http://a1024708231.github.io/2019/10/17/java中的IO流/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>
