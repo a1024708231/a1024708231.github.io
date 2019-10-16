@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://a1024708231.github.io/2019/10/15/java中的集合类/imges/1571136614055.png">
 <meta property="og:image" content="http://a1024708231.github.io/2019/10/15/java中的集合类/imges/1571136668715.png">
-<meta property="og:updated_time" content="2019-10-15T17:54:53.686Z">
+<meta property="og:updated_time" content="2019-10-15T20:44:26.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java中的集合类">
 <meta name="twitter:description" content="java中的集合类Collection我的理解 网上找的图 ———————————————— List , Set, Map都是接口，前两个继承至Collection接口，Map为独立接口Set下有HashSet，LinkedHashSet，TreeSetList下有ArrayList，Vector，LinkedListMap下有Hashtable，LinkedHashMap，HashMap，Tr">
@@ -102,7 +102,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(4)</small></div></li>
+    <li><div class="all active">全部文章<small>(7)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -114,7 +114,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="4">
+<input type="hidden" id="yelog_site_posts_number" value="7">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -153,6 +153,46 @@
     <nav id="title-list-nav">
         
         <a  class=""
+           href="/2019/10/16/java中Map、Conllection的迭代器/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java中Map、Conllection的迭代器">java中Map、Conllection的迭代器</span>
+            <span class="post-date" title="2019-10-16 04:06:37">2019/10/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/16/java的Map接口/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java的Map接口">java的Map接口</span>
+            <span class="post-date" title="2019-10-16 03:15:56">2019/10/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/16/Collections工具类的使用/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Collections工具类的使用">Collections工具类的使用</span>
+            <span class="post-date" title="2019-10-16 02:36:08">2019/10/16</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/15/java中的集合类/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java中的集合类">java中的集合类</span>
+            <span class="post-date" title="2019-10-15 18:06:16">2019/10/15</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/14/搭建hexo博客流程/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="搭建hexo博客流程">搭建hexo博客流程</span>
+            <span class="post-date" title="2019-10-14 20:31:31">2019/10/14</span>
+        </a>
+        
+        <a  class=""
            href="/2019/10/14/我的第一篇博客文章/"
            data-tag=""
            data-author="" >
@@ -166,22 +206,6 @@
            data-author="" >
             <span class="post-title" title="Hello World">Hello World</span>
             <span class="post-date" title="2019-10-14 05:30:23">2019/10/14</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/10/14/搭建hexo博客流程/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="搭建hexo博客流程">搭建hexo博客流程</span>
-            <span class="post-date" title="2019-10-14 20:31:31">2019/10/14</span>
-        </a>
-        
-        <a  class=""
-           href="/2019/10/15/java中的集合类/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="java中的集合类">java中的集合类</span>
-            <span class="post-date" title="2019-10-15 18:06:16">2019/10/15</span>
         </a>
         
     </nav>
@@ -208,7 +232,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-16 01:54:53'>2019-10-15 18:06</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-16 04:44:26'>2019-10-15 18:06</time>
         
     </div>
     <div class="article-meta">
@@ -267,7 +291,7 @@
 <p><strong>hasNext()</strong>：检查序列中是否还有元素。</p>
 <p><strong>remove()</strong>：将返回的元素删除。</p>
 <pre><code>List list;
-Iterator iterator = list.iterator();
+Iterator&lt;obj&gt; iterator = list.iterator();
 while(iterator.hasNext())
     {
     System.out.print(iterator.next();)
@@ -282,7 +306,7 @@ while(iterator.hasNext())
 <p>*<em>set(); *</em>    修改当前元素的值</p>
 <pre><code class="java">List list = new ArrayList();
 
-ListIterator li = list.listIterator();
+ListIterator&lt;obj&gt; li = list.listIterator();
 while(li.hasNext())//+迭代输出
 while(li.hasPrevious())//+迭代输出</code></pre>
 
@@ -302,7 +326,7 @@ while(li.hasPrevious())//+迭代输出</code></pre>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-15, 18:06:16</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-16, 01:54:53</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-16, 04:44:26</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/15/java中的集合类/" title="java中的集合类">http://a1024708231.github.io/2019/10/15/java中的集合类/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。

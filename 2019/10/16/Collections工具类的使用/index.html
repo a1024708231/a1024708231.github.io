@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | Hexo</title>
+  <title>Collections工具类的使用 | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="Hello World | Hexo">
+  <meta name="description" content="Collections工具类的使用 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="java中的集合类Collection我的理解 网上找的图 ———————————————— List , Set, Map都是接口，前两个继承至Collection接口，Map为独立接口Set下有HashSet，LinkedHashSet，TreeSetList下有ArrayList，Vector，LinkedListMap下有Hashtable，LinkedHashMap，HashMap，Tr">
 <meta property="og:type" content="article">
@@ -220,9 +220,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Collections工具类的使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">Collections工具类的使用</h1>
     
     <div class="article-meta">
         
@@ -232,7 +232,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 05:30:23'>2019-10-14 05:30</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-16 03:15:08'>2019-10-16 02:36</time>
         
     </div>
     <div class="article-meta">
@@ -254,7 +254,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Collections工具类的使用"><span class="toc-text">Collections工具类的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#常用方法"><span class="toc-text">常用方法</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -270,15 +270,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="Collections工具类的使用"><a href="#Collections工具类的使用" class="headerlink" title="Collections工具类的使用"></a>Collections工具类的使用</h1><p>Collections类是一个静态工具类，位于  java.util.Collections</p>
+<p>提供了对Set、List、Map进行排序、填充、查找元素的辅助方法。</p>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><p>addAll(Collection , obj,obj2,obj3);向集合中添加多个元素</p>
+<p>shuffle(List);  随机打乱集合里面的顺序</p>
+<p>sort(List);  按照自然顺序排序  或者自定义类的排序规则：使用Comparable接口</p>
+<p>sort(List, Comparator); 安照指定的Comparator 规则比较器进行排序</p>
+<p>swap(List,int,int);  互换List中的指定索引位置元素</p>
+<p>binarySearch(List,obj);  查找List里的obj元素，折半查找（二分法查找），返回索引，无则返回-1</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -292,12 +291,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>Collections工具类的使用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 05:30:23</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 05:30:23</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/hello-world/" title="Hello World">http://a1024708231.github.io/2019/10/14/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-16, 02:36:08</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-16, 03:15:08</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/Collections工具类的使用/" title="Collections工具类的使用">http://a1024708231.github.io/2019/10/16/Collections工具类的使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>

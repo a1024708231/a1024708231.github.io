@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | Hexo</title>
+  <title>java中Map、Conllection的迭代器 | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="Hello World | Hexo">
+  <meta name="description" content="java中Map、Conllection的迭代器 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="java中的集合类Collection我的理解 网上找的图 ———————————————— List , Set, Map都是接口，前两个继承至Collection接口，Map为独立接口Set下有HashSet，LinkedHashSet，TreeSetList下有ArrayList，Vector，LinkedListMap下有Hashtable，LinkedHashMap，HashMap，Tr">
 <meta property="og:type" content="article">
@@ -220,9 +220,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java中Map、Conllection的迭代器" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java中Map、Conllection的迭代器</h1>
     
     <div class="article-meta">
         
@@ -232,7 +232,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 05:30:23'>2019-10-14 05:30</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-16 04:20:37'>2019-10-16 04:06</time>
         
     </div>
     <div class="article-meta">
@@ -254,7 +254,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java中Map、Conllection的迭代器"><span class="toc-text">java中Map、Conllection的迭代器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代器Iterator"><span class="toc-text">迭代器Iterator</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Iterator常用方法"><span class="toc-text">Iterator常用方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代器ListIterator"><span class="toc-text">迭代器ListIterator</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#set集合"><span class="toc-text">set集合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Map遍历"><span class="toc-text">Map遍历</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#具体实现："><span class="toc-text">具体实现：</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -270,15 +270,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="java中Map、Conllection的迭代器"><a href="#java中Map、Conllection的迭代器" class="headerlink" title="java中Map、Conllection的迭代器"></a>java中Map、Conllection的迭代器</h1><h3 id="迭代器Iterator"><a href="#迭代器Iterator" class="headerlink" title="迭代器Iterator"></a>迭代器Iterator</h3><p>Iterator是java.lang包中自带的接口，被Collection继承。</p>
+<p>Iterator只能向后遍历，不能向前遍历。</p>
+<h4 id="Iterator常用方法"><a href="#Iterator常用方法" class="headerlink" title="Iterator常用方法"></a>Iterator常用方法</h4><p><strong>iterator()</strong>：要求容器返回一个Iterator对象</p>
+<p><strong>next()</strong>：第一次调用时返回第一个元素，以后调用发那会下一个元素。</p>
+<p><strong>hasNext()</strong>：检查序列中是否还有元素。</p>
+<p><strong>remove()</strong>：将返回的元素删除。</p>
+<pre><code>List list;
+Iterator&lt;obj&gt; iterator = list.iterator();
+while(iterator.hasNext())
+    {
+    System.out.print(iterator.next();)
+    }</code></pre><h3 id="迭代器ListIterator"><a href="#迭代器ListIterator" class="headerlink" title="迭代器ListIterator"></a>迭代器ListIterator</h3><p>继承于Iterator，被List继承，Set不能用。可以双向遍历，可以插入和删除元素</p>
+<p>next();</p>
+<p><strong>previous();</strong>  向前遍历</p>
+<p>hasNext();</p>
+<p><strong>hasPrevious();</strong>  判断是否有前一个</p>
+<p><strong>add();</strong>  添加一个元素</p>
+<p><strong>nextIndex();</strong>  前一个元素的索引值，即下标</p>
+<p><strong>previousIndex();</strong>  后一个元素的索引值，即下标</p>
+<p>*<em>set(); *</em>    修改当前元素的值</p>
+<pre><code class="java">List list = new ArrayList();
+
+ListIterator&lt;obj&gt; li = list.listIterator();
+while(li.hasNext())//+迭代输出
+while(li.hasPrevious())//+迭代输出</code></pre>
+<h2 id="set集合"><a href="#set集合" class="headerlink" title="set集合"></a>set集合</h2><p>set迭代基本和list一样使用</p>
+<p>另外，set中存放 map需要借助<strong>Map.Entry&lt;K,V&gt;</strong></p>
+<h2 id="Map遍历"><a href="#Map遍历" class="headerlink" title="Map遍历"></a>Map遍历</h2><p>需要借助Entry&lt;K, V&gt;</p>
+<p>先用 map.entrySet()转化成Set集合里面存着Entry&lt;K, V&gt;</p>
+<p>然后遍历set集合</p>
+<h4 id="具体实现："><a href="#具体实现：" class="headerlink" title="具体实现："></a>具体实现：</h4><pre><code class="java">Map&lt;int,String&gt; map1 = new HashMap&lt;&gt;();
+/***lue***/
+Set&lt;Entry&lt;int,String&gt;&gt; ss = map1.entrySet();
+for(Iterator&lt;Entry&lt;int,String&gt;&gt; iterator = ss.iterator();iter.hasNext();){
+    Entry&lt;int,String&gt; temp = iterator.next();
+    System.out.println(temp.getKey()+temp.getValue());
+}</code></pre>
+<pre><code class="java"> 是</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -292,12 +321,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java中Map、Conllection的迭代器</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 05:30:23</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 05:30:23</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/hello-world/" title="Hello World">http://a1024708231.github.io/2019/10/14/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-16, 04:06:37</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-16, 04:20:37</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/java中Map、Conllection的迭代器/" title="java中Map、Conllection的迭代器">http://a1024708231.github.io/2019/10/16/java中Map、Conllection的迭代器/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>

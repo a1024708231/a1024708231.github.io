@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>Hello World | Hexo</title>
+  <title>java的Map接口 | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="Hello World | Hexo">
+  <meta name="description" content="java的Map接口 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="java中的集合类Collection我的理解 网上找的图 ———————————————— List , Set, Map都是接口，前两个继承至Collection接口，Map为独立接口Set下有HashSet，LinkedHashSet，TreeSetList下有ArrayList，Vector，LinkedListMap下有Hashtable，LinkedHashMap，HashMap，Tr">
 <meta property="og:type" content="article">
@@ -220,9 +220,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java的Map接口" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Hello World</h1>
+        <h1 class="article-title">java的Map接口</h1>
     
     <div class="article-meta">
         
@@ -232,7 +232,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 05:30:23'>2019-10-14 05:30</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-16 04:05:05'>2019-10-16 03:15</time>
         
     </div>
     <div class="article-meta">
@@ -254,7 +254,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java的Map接口"><span class="toc-text">java的Map接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Map接口"><span class="toc-text">Map接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Map接口的常用方法："><span class="toc-text">Map接口的常用方法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hashMap"><span class="toc-text">hashMap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#treeMap"><span class="toc-text">treeMap</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#使用：当需要排序的Map时使用"><span class="toc-text">使用：当需要排序的Map时使用</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#网上找的其它子类"><span class="toc-text">网上找的其它子类</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -270,15 +270,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="java的Map接口"><a href="#java的Map接口" class="headerlink" title="java的Map接口"></a>java的Map接口</h1><h3 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h3><p>Map 就是用来存储键—值对的，即Key — Value</p>
+<p>Key 不能重复</p>
+<h4 id="Map接口的常用方法："><a href="#Map接口的常用方法：" class="headerlink" title="Map接口的常用方法："></a>Map接口的常用方法：</h4><p>put(key,value);   存放一个键值对，返回被替换掉的key的value值，如果原来不存在该key，则返回                                null，当然原来key的value也允许为null。</p>
+<p>get(key);      查找key得到value</p>
+<p>remove(key);   删除一个key-value，返回删除的value</p>
+<p>boolean containsKey(key);   判断是否存在key</p>
+<p>boolean containsValue(value);   判断是否存在value</p>
+<p>int size();   返回键值对数量；</p>
+<p>boolean isEmpty();   判断是否为空</p>
+<p>void  putAll(Map map);   将另一个map存进去</p>
+<p>void clear();  清空所有键值对</p>
+<h3 id="hashMap"><a href="#hashMap" class="headerlink" title="hashMap"></a>hashMap</h3><p>基本使用示例</p>
+<pre><code class="java">Map&lt;Integer,String&gt; map =new HashMap&lt;&gt;();
+
+map.put(1,&quot;one&quot;);
+map.put(2,&quot;two&quot;);
+
+System.out.println(map.get(1));</code></pre>
+<h3 id="treeMap"><a href="#treeMap" class="headerlink" title="treeMap"></a>treeMap</h3><p>treeMap底层采用红黑二叉树实现，自动排序，默认按照key递增排序；</p>
+<pre><code>                     可自定义排序方法，key实现comparable接口</code></pre><pre><code class="java">class keyObj implements Comparable&lt;keyObj&gt;{  
+        ****
+        @Override
+        public int compareTo(keyObj o){//返回负数表示小于，返回0表示等于，正数表示大于
+            if(this.id&lt;o.id)return -1;
+            ********//略
+        }
+}</code></pre>
+<p>效率低于hashMap</p>
+<p>方法调用基本一致</p>
+<h5 id="使用：当需要排序的Map时使用"><a href="#使用：当需要排序的Map时使用" class="headerlink" title="使用：当需要排序的Map时使用"></a>使用：当需要排序的Map时使用</h5><h2 id="网上找的其它子类"><a href="#网上找的其它子类" class="headerlink" title="网上找的其它子类"></a>网上找的其它子类</h2><p><strong>HashMap</strong>：它根据键的hashCode值存储数据，大多数情况下可以直接定位到它的值，因而具有很快的访问速度，但遍历顺序却是不确定的。 HashMap最多只允许一条记录的键为null，允许多条记录的值为null。HashMap非线程安全，即任一时刻可以有多个线程同时写HashMap，可能会导致数据的不一致。如果需要满足线程安全，可以用 Collections的synchronizedMap方法使HashMap具有线程安全的能力，或者使用ConcurrentHashMap。<br><strong>Hashtable</strong>：Hashtable是遗留类，很多映射的常用功能与HashMap类似，不同的是它承自Dictionary类，并且是线程安全的，任一时间只有一个线程能写Hashtable，并发性不如ConcurrentHashMap，因为ConcurrentHashMap引入了分段锁。Hashtable不建议在新代码中使用，不需要线程安全的场合可以用HashMap替换，需要线程安全的场合可以用ConcurrentHashMap替换。<br><strong>LinkedHashMap</strong>：LinkedHashMap是HashMap的一个子类，保存了记录的插入顺序，在用Iterator遍历LinkedHashMap时，先得到的记录肯定是先插入的，也可以在构造时带参数，按照访问次序排序。<br><strong>TreeMap</strong>：TreeMap实现SortedMap接口，能够把它保存的记录根据键排序，默认是按键值的升序排序，也可以指定排序的比较器，当用Iterator遍历TreeMap时，得到的记录是排过序的。如果使用排序的映射，建议使用TreeMap。在使用TreeMap时，key必须实现Comparable接口或者在构造TreeMap传入自定义的Comparator，否则会在运行时抛出java.lang.ClassCastException类型的异常。<br>对于上述四种Map类型的类，要求映射中的key是不可变对象。不可变对象是该对象在创建后它的哈希值不会被改变。如果对象的哈希值发生变化，Map对象很可能就定位不到映射的位置了。<br>————————————————<br>版权声明：本文为CSDN博主「csdn-[baotai]」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/csdn_baotai/article/details/82812228" target="_blank" rel="noopener">https://blog.csdn.net/csdn_baotai/article/details/82812228</a></p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -292,12 +313,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>Hello World</p>
+    <p><span class="copy-title">文章标题:</span>java的Map接口</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 05:30:23</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 05:30:23</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/hello-world/" title="Hello World">http://a1024708231.github.io/2019/10/14/hello-world/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-16, 03:15:56</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-16, 04:05:05</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/16/java的Map接口/" title="java的Map接口">http://a1024708231.github.io/2019/10/16/java的Map接口/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>
