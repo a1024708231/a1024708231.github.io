@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>我的第一篇博客文章 | Hexo</title>
+  <title>java网络编程UDP&amp;TCP | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="我的第一篇博客文章 | Hexo">
+  <meta name="description" content="java网络编程UDP&amp;TCP | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Java中的IO流 分类：按照流的方向：输入流        输出流 按照流的处理数据：字符流        字节流 按照功能分类：节点流       处理流 有FIle 和 ByteArray  的都是节点流    即文件和数组，直接数据源 一、File初始化File src = new File(“D:\blog\sources\java中的IO流.md”);  路径说明：绝对路径：”D:\b">
 <meta property="og:type" content="article">
@@ -243,9 +243,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-我的第一篇博客文章" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-java网络编程UDP-TCP" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">我的第一篇博客文章</h1>
+        <h1 class="article-title">java网络编程UDP&amp;TCP</h1>
     
     <div class="article-meta">
         
@@ -255,7 +255,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 05:45:31'>2019-10-14 05:34</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-20 20:58:56'>2019-10-19 16:05</time>
         
     </div>
     <div class="article-meta">
@@ -277,7 +277,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章"><span class="toc-text">第一章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章"><span class="toc-text">第二章</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#java网络编程UDP-amp-TC"><span class="toc-text">java网络编程UDP&amp;TC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#InetSocketAddress类"><span class="toc-text">InetSocketAddress类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#UDP协议"><span class="toc-text">UDP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#使用数据包传输数据"><span class="toc-text">使用数据包传输数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#基本步骤"><span class="toc-text">基本步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP协议"><span class="toc-text">TCP协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本步骤-1"><span class="toc-text">基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#服务器端"><span class="toc-text">服务器端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#客户端"><span class="toc-text">客户端</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -293,12 +293,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<p>###参考文献</p>
-<p>yourEyelash</p>
+        <h1 id="java网络编程UDP-amp-TC"><a href="#java网络编程UDP-amp-TC" class="headerlink" title="java网络编程UDP&amp;TC"></a>java网络编程UDP&amp;TC</h1><h3 id="InetSocketAddress类"><a href="#InetSocketAddress类" class="headerlink" title="InetSocketAddress类"></a>InetSocketAddress类</h3><p>说到端口，则要引入一个类：InetSocketAddress</p>
+<p>此类实现 IP 套接字地址（IP 地址 + 端口号）。</p>
+<p>构造方法摘要<br>InetSocketAddress(InetAddress addr, int port)<br>根据 IP 地址和端口号创建套接字地址。<br>InetSocketAddress(int port)<br>创建套接字地址，其中 IP 地址为通配符地址，端口号为指定值。<br>InetSocketAddress(String hostname, int port)<br>根据主机名和端口号创建套接字地址。<br>常用方法摘要<br>InetAddress getAddress()<br>获取 InetAddress。<br>String getHostName()<br>获取 hostname。<br>int getPort()<br>获取端口号。</p>
+<h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><h4 id="使用数据包传输数据"><a href="#使用数据包传输数据" class="headerlink" title="使用数据包传输数据"></a>使用数据包传输数据</h4><p><strong>DatagramSocket</strong>：用于发送或接收数据包的Socket</p>
+<p><strong>DatagramPacket</strong>：数据包</p>
+<h3 id="基本步骤"><a href="#基本步骤" class="headerlink" title="基本步骤"></a>基本步骤</h3><p>发送端：</p>
+<p>1、创建端口   DatagramSocket socket = new DatagramSocket（8081）；</p>
+<p>2、准备数据  转成字节数组  byte[]</p>
+<p>3、封装成DatagramPacket 包裹，<strong>需要指定目的地</strong></p>
+<pre><code class="java">DatagramPacket Packet = new DatagramPacket（datas,0,datas.length,
+                                new InetSocketAddress(&quot;localhost&quot;,8088)）；</code></pre>
+<p>4、发送包裹  send（DatagramPacket p）</p>
+<p>5、释放资源</p>
+<p>接受端：</p>
+<p>1、创建端口    DatagramSocket socket = new DatagramSocket（8088）；</p>
+<p>2、准备容器，封装成DatagramPacket包裹     </p>
+<p>​        byte[] b = new byte[100];</p>
+<p>​        DatagremPacket packet = new DatagramPacket(b,b.lenth);</p>
+<p>3、阻塞式接收包裹receive（DatagramPacket p）；</p>
+<p>4、分析数据</p>
+<pre><code class="java"> String str = new String(packet.getDate(),0,packet.getLength());</code></pre>
+<p>5、释放资源</p>
+<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><p>面向连接，基于请求相应</p>
+<p>SeverSocket（int port）创建服务端监听端口</p>
+<p>Socket（String host，int port） 客户端建立连接</p>
+<h3 id="基本步骤-1"><a href="#基本步骤-1" class="headerlink" title="基本步骤"></a>基本步骤</h3><h4 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h4><p>1、创建端口 使用SeverSocket</p>
+<p>​        ServerSocket server = new ServerSocket(8088);</p>
+<p>2、阻塞式等待连接 accept</p>
+<p>​        Socket client = server.accept();</p>
+<p>3、操作：输入输出流</p>
+<p>​        DataInputStream dis = new DataInputStream(server.getInputStream());</p>
+<p>​        String data = dis.readUTF();</p>
+<p>​        System.out.println(data);</p>
+<p>4、释放资源</p>
+<p>​        dis.close();</p>
+<p>​        server.close();</p>
+<h4 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h4><p>1、创建客户端，即建立连接：使用Socket  +<strong>服务器的地址和端口</strong></p>
+<p>​        Socket client = new Socket（“localhost”，8088）；</p>
+<p>2、操作：输入输出流操作</p>
+<p>​        DataOutputStream dos = new DataOutputStream(client.getOutputStream());</p>
+<p>​        String data = “hello”;</p>
+<p>​        dos.writeUTF(data);</p>
+<p>​        dos.flush();</p>
+<p>3、释放资源</p>
+<p>​        dos.close();</p>
+<p>​        client.close();</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -312,12 +352,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>我的第一篇博客文章</p>
+    <p><span class="copy-title">文章标题:</span>java网络编程UDP&amp;TCP</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 05:34:29</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 05:45:31</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/我的第一篇博客文章/" title="我的第一篇博客文章">http://a1024708231.github.io/2019/10/14/我的第一篇博客文章/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-19, 16:05:19</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-20, 20:58:56</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/19/java网络编程UDP-TCP/" title="java网络编程UDP&amp;TCP">http://a1024708231.github.io/2019/10/19/java网络编程UDP-TCP/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>

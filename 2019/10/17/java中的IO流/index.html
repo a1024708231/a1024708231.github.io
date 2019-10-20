@@ -6,17 +6,19 @@
   <meta name="keywords" content>
   <meta name="description" content="java中的IO流 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="java中Map、Conllection的迭代器迭代器IteratorIterator是java.lang包中自带的接口，被Collection继承。 Iterator只能向后遍历，不能向前遍历。 Iterator常用方法iterator()：要求容器返回一个Iterator对象 next()：第一次调用时返回第一个元素，以后调用发那会下一个元素。 hasNext()：检查序列中是否还有元素。 r">
+<meta name="description" content="Java中的IO流 分类：按照流的方向：输入流        输出流 按照流的处理数据：字符流        字节流 按照功能分类：节点流       处理流 有FIle 和 ByteArray  的都是节点流    即文件和数组，直接数据源 一、File初始化File src = new File(“D:\blog\sources\java中的IO流.md”);  路径说明：绝对路径：”D:\b">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中Map、Conllection的迭代器">
-<meta property="og:url" content="http://a1024708231.github.io/2019/10/16/java中Map、Conllection的迭代器/index.html">
+<meta property="og:title" content="java中的IO流">
+<meta property="og:url" content="http://a1024708231.github.io/2019/10/17/java中的IO流/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="java中Map、Conllection的迭代器迭代器IteratorIterator是java.lang包中自带的接口，被Collection继承。 Iterator只能向后遍历，不能向前遍历。 Iterator常用方法iterator()：要求容器返回一个Iterator对象 next()：第一次调用时返回第一个元素，以后调用发那会下一个元素。 hasNext()：检查序列中是否还有元素。 r">
+<meta property="og:description" content="Java中的IO流 分类：按照流的方向：输入流        输出流 按照流的处理数据：字符流        字节流 按照功能分类：节点流       处理流 有FIle 和 ByteArray  的都是节点流    即文件和数组，直接数据源 一、File初始化File src = new File(“D:\blog\sources\java中的IO流.md”);  路径说明：绝对路径：”D:\b">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-15T20:20:37.595Z">
+<meta property="og:image" content="http://a1024708231.github.io/2019/10/17/java中的IO流/java%E4%B8%AD%E7%9A%84IO%E6%B5%81%5C1186236-20170628084745102-439177264.png">
+<meta property="og:updated_time" content="2019-10-18T21:46:07.025Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中Map、Conllection的迭代器">
-<meta name="twitter:description" content="java中Map、Conllection的迭代器迭代器IteratorIterator是java.lang包中自带的接口，被Collection继承。 Iterator只能向后遍历，不能向前遍历。 Iterator常用方法iterator()：要求容器返回一个Iterator对象 next()：第一次调用时返回第一个元素，以后调用发那会下一个元素。 hasNext()：检查序列中是否还有元素。 r">
+<meta name="twitter:title" content="java中的IO流">
+<meta name="twitter:description" content="Java中的IO流 分类：按照流的方向：输入流        输出流 按照流的处理数据：字符流        字节流 按照功能分类：节点流       处理流 有FIle 和 ByteArray  的都是节点流    即文件和数组，直接数据源 一、File初始化File src = new File(“D:\blog\sources\java中的IO流.md”);  路径说明：绝对路径：”D:\b">
+<meta name="twitter:image" content="http://a1024708231.github.io/2019/10/17/java中的IO流/java%E4%B8%AD%E7%9A%84IO%E6%B5%81%5C1186236-20170628084745102-439177264.png">
 
 
 <link rel="icon" href="/img/headimg.jpg">
@@ -99,7 +101,7 @@
 
 
 <ul>
-    <li><div class="all active">全部文章<small>(8)</small></div></li>
+    <li><div class="all active">全部文章<small>(10)</small></div></li>
     
 </ul>
 <div class="left-bottom">
@@ -111,7 +113,7 @@
     </div>
     <div></div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="8">
+<input type="hidden" id="yelog_site_posts_number" value="10">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -148,6 +150,22 @@
 
     
     <nav id="title-list-nav">
+        
+        <a  class=""
+           href="/2019/10/21/网络编程之手写聊天室/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="网络编程之手写聊天室">网络编程之手写聊天室</span>
+            <span class="post-date" title="2019-10-21 02:07:41">2019/10/21</span>
+        </a>
+        
+        <a  class=""
+           href="/2019/10/19/java网络编程UDP-TCP/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="java网络编程UDP&amp;TCP">java网络编程UDP&amp;TCP</span>
+            <span class="post-date" title="2019-10-19 16:05:19">2019/10/19</span>
+        </a>
         
         <a  class=""
            href="/2019/10/17/java中的IO流/"
@@ -237,7 +255,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-17 03:45:34'>2019-10-17 01:10</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-19 05:46:07'>2019-10-17 01:10</time>
         
     </div>
     <div class="article-meta">
@@ -259,7 +277,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中的IO流"><span class="toc-text">Java中的IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类："><span class="toc-text">分类：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#按照流的方向："><span class="toc-text">按照流的方向：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按照流的处理数据："><span class="toc-text">按照流的处理数据：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按照功能分类："><span class="toc-text">按照功能分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、File"><span class="toc-text">一、File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#路径说明："><span class="toc-text">路径说明：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件夹"><span class="toc-text">文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历文件夹"><span class="toc-text">遍历文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#递归："><span class="toc-text">递归：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四个抽象接口"><span class="toc-text">四个抽象接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本操作步骤"><span class="toc-text">基本操作步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InputStream"><span class="toc-text">InputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OutputStream"><span class="toc-text">OutputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reader"><span class="toc-text">Reader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Writer"><span class="toc-text">Writer</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Java中的IO流"><span class="toc-text">Java中的IO流</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#分类："><span class="toc-text">分类：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#按照流的方向："><span class="toc-text">按照流的方向：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按照流的处理数据："><span class="toc-text">按照流的处理数据：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#按照功能分类："><span class="toc-text">按照功能分类：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一、File"><span class="toc-text">一、File</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#路径说明："><span class="toc-text">路径说明：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件夹"><span class="toc-text">文件夹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#遍历文件夹"><span class="toc-text">遍历文件夹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#递归："><span class="toc-text">递归：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四个抽象接口"><span class="toc-text">四个抽象接口</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本操作步骤"><span class="toc-text">基本操作步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InputStream"><span class="toc-text">InputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OutputStream"><span class="toc-text">OutputStream</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reader"><span class="toc-text">Reader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Writer"><span class="toc-text">Writer</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#处理流"><span class="toc-text">处理流</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -341,6 +359,26 @@ public Static void printName(File src){
 <h3 id="Writer"><a href="#Writer" class="headerlink" title="Writer"></a>Writer</h3><p>Appendable接口，可追加的写</p>
 <p>write(char[] c)</p>
 <p>write( )</p>
+<h2 id="处理流"><a href="#处理流" class="headerlink" title="处理流"></a>处理流</h2><p>处理流即缓冲流，内部维持了一个数组缓冲数据，提高效率。</p>
+<p>使用装饰模式</p>
+<p>释放最外层的处理流，内部的字节流会自动释放。手动关需要从里关到外</p>
+<pre><code class="java">InputStream is = null;
+try{
+    is = new BufferedInputStream(new FileInputStream(src));
+    byte[] flush = new byte [1024];//缓冲容器
+    int len = -1;//返回的接受长度
+    while（(len=is.read(flush))!=-1）{
+        //字节数组--》字符串（解码）
+        String str = new String(flush,0,len);
+        System.out.println(str);
+    }
+}catch(FlieNotFoundException e){
+    e.printStackTrace();
+}catch(IOException e){
+    e.printStackTrace();
+}finally{
+    //释放资源
+}</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -358,7 +396,7 @@ public Static void printName(File src){
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
     <p><span class="copy-title">发布时间:</span>2019-10-17, 01:10:02</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-17, 03:45:34</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-19, 05:46:07</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/17/java中的IO流/" title="java中的IO流">http://a1024708231.github.io/2019/10/17/java中的IO流/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。

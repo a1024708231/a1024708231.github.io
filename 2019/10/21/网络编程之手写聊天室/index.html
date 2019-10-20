@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>我的第一篇博客文章 | Hexo</title>
+  <title>网络编程之手写聊天室 | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="我的第一篇博客文章 | Hexo">
+  <meta name="description" content="网络编程之手写聊天室 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Java中的IO流 分类：按照流的方向：输入流        输出流 按照流的处理数据：字符流        字节流 按照功能分类：节点流       处理流 有FIle 和 ByteArray  的都是节点流    即文件和数组，直接数据源 一、File初始化File src = new File(“D:\blog\sources\java中的IO流.md”);  路径说明：绝对路径：”D:\b">
 <meta property="og:type" content="article">
@@ -243,9 +243,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-我的第一篇博客文章" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-网络编程之手写聊天室" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">我的第一篇博客文章</h1>
+        <h1 class="article-title">网络编程之手写聊天室</h1>
     
     <div class="article-meta">
         
@@ -255,7 +255,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 05:45:31'>2019-10-14 05:34</time>
+        创建时间:<time class="date" title='更新时间: 2019-10-21 02:16:41'>2019-10-21 02:07</time>
         
     </div>
     <div class="article-meta">
@@ -277,7 +277,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章"><span class="toc-text">第一章</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章"><span class="toc-text">第二章</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#网络编程之手写聊天室"><span class="toc-text">网络编程之手写聊天室</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#服务器端代码"><span class="toc-text">服务器端代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#客户端代码"><span class="toc-text">客户端代码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#chatRoomClient类"><span class="toc-text">chatRoomClient类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Resive类"><span class="toc-text">Resive类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Send类"><span class="toc-text">Send类</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -293,12 +293,294 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h2><p>内容</p>
-<hr>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><p>内容</p>
-<hr>
-<p>###参考文献</p>
-<p>yourEyelash</p>
+        <h1 id="网络编程之手写聊天室"><a href="#网络编程之手写聊天室" class="headerlink" title="网络编程之手写聊天室"></a>网络编程之手写聊天室</h1><p>服务端使用CopyOnWriteArrayList储存每个连接的Channle对象</p>
+<p>每个Channle对象是一个线程</p>
+<p>Channle除了重写了线程的run方法外，还提供send，resive，sendSomeone，sendOther方法</p>
+<p>客户端采用两个不同的线程，一个线程负责发，Send；一个线程负责收，Resive</p>
+<h2 id="服务器端代码"><a href="#服务器端代码" class="headerlink" title="服务器端代码"></a>服务器端代码</h2><pre><code class="java">package chatRoomOOP.server;
+
+import java.io.Closeable;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+//服务器
+public class chatRoomServer {
+    private static CopyOnWriteArrayList&lt;Channle&gt; all = new CopyOnWriteArrayList&lt;Channle&gt;();
+    public static void main(String[] args) throws IOException {
+
+        // 建立服务端口
+        @SuppressWarnings(&quot;resource&quot;)
+        ServerSocket server = new ServerSocket(8090);
+        boolean isRunning=true;
+        System.out.println(&quot;----Server----&quot;);
+        while(isRunning) {
+            Socket socket = server.accept();
+            Channle channle = new Channle(socket);
+            all.add(channle);
+            //启动线程
+            new Thread(channle).start();
+        }
+
+    }
+    static class Channle implements Runnable{
+
+        boolean hock=true;
+        String name;
+        String someoneName=&quot;&quot;;
+        Socket socket=null;
+        DataInputStream is=null;
+        DataOutputStream os = null;
+        String message=&quot;&quot;;
+        boolean isRunning=true;
+        public Channle(Socket socket) throws IOException {
+            this.socket=socket;
+            is=new DataInputStream(socket.getInputStream());
+            os = new DataOutputStream(socket.getOutputStream());
+
+            name=is.readUTF();
+        }
+
+        @Override
+        public void run() {
+            while(isRunning) {
+                //接受到一条消息就发送一次成功
+                resive();
+                if(hock) {
+                    sendOthers(name,message);
+                }else {
+                    sendSomeone(someoneName);
+                    hock=true;
+                }
+            }
+
+        }
+        //发送消息
+        private void send(String name,String message) {
+            try {
+                os.writeUTF(name+&quot;:&quot;+message);
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                System.out.println(&quot;-----1-----&quot;);
+                isRunning=false;
+                relese(is,os,socket);
+            }
+
+        }
+        //接收消息
+        private void resive() {
+            try {
+                message = is.readUTF();
+                //System.out.println(message);
+                if(message.startsWith(&quot;@&quot;)) {
+                    hock=false;
+                    int idx=message.indexOf(&quot;:&quot;);
+                    someoneName=message.substring(1, idx);
+                    message=message.substring(idx+1);
+                }
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                System.out.println(&quot;-----2-----&quot;);
+                isRunning=false;
+                relese(is,os,socket);
+            }
+
+        }
+        //发给别人
+        private void sendOthers(String name,String message) {
+            for(Channle c:all) {
+                if(!this.name.equals(c.name)) {
+                    c.send(name,message);
+                }
+            }
+
+        }
+        //私聊发送给某个人
+        private void sendSomeone(String someoneName) {
+            for(Channle c:all) {
+                if(c.name.equals(someoneName)) {
+                    c.send(name, message);
+                }
+            }
+
+        }
+        //关闭资源
+        private void relese(Closeable... objs) {
+            for(Closeable obj:objs) {
+                if(obj!=null)
+                    try {
+                        obj.close();
+                    } catch (IOException e) {
+                        // TODO Auto-generated catch block
+                        System.out.println(&quot;----3------&quot;);
+                        isRunning=false;
+                    }
+            }
+
+        }
+
+    }
+
+}
+</code></pre>
+<h2 id="客户端代码"><a href="#客户端代码" class="headerlink" title="客户端代码"></a>客户端代码</h2><h4 id="chatRoomClient类"><a href="#chatRoomClient类" class="headerlink" title="chatRoomClient类"></a>chatRoomClient类</h4><pre><code class="java">package chatRoomOOP.client;
+
+import java.io.IOException;
+import java.net.Socket;
+import java.net.UnknownHostException;
+import java.util.Scanner;
+
+public class chatRoomClient {
+    public static void main(String args[]) throws UnknownHostException, IOException {
+        //1.建立连接
+        //2.循环发送消息   一条线程发消息
+        //3.循环读消息   一条线程读消息
+
+        //建立连接
+        Socket socket = new Socket(&quot;localhost&quot;,8090);
+        System.out.println(&quot;----Client----&quot;);
+        System.out.println(&quot;请输入你的名字：&quot;);
+        Scanner sc=new Scanner(System.in);
+        String name = sc.nextLine();
+        new Thread(new Send(socket,name)).start();
+        new Thread(new Resive(socket)).start();
+    }
+
+}
+</code></pre>
+<h4 id="Resive类"><a href="#Resive类" class="headerlink" title="Resive类"></a>Resive类</h4><pre><code class="java">package chatRoomOOP.client;
+
+import java.io.Closeable;
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.net.Socket;
+
+public class Resive implements Runnable {
+
+    Socket socket=null;
+    DataInputStream is=null;
+    boolean isRunning=true;
+    String message=&quot;&quot;;
+    //构造方法
+    public Resive(Socket socket) {
+        this.socket=socket;
+        try {
+            is=new DataInputStream(socket.getInputStream());
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            System.out.println(&quot;-----resive1-----&quot;);
+            isRunning=false;
+            relese(socket,is);
+        }
+    }
+
+
+    @Override
+    public void run() {
+
+        while(isRunning) {
+            resive();
+        }
+    }
+    //接收方法
+    private void resive() {
+        try {
+            message=is.readUTF();
+            System.out.println(message);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            System.out.println(&quot;-----resive2-----&quot;);
+            isRunning=false;
+            relese(socket,is);
+        }
+
+    }
+    //关闭资源
+    private void relese(Closeable... objs) {
+        for(Closeable obj:objs) {
+            if(obj!=null)
+                try {
+                    obj.close();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    System.out.println(&quot;-----resive3-----&quot;);
+                    isRunning=false;
+                }
+        }
+
+    }
+}
+</code></pre>
+<h4 id="Send类"><a href="#Send类" class="headerlink" title="Send类"></a>Send类</h4><pre><code class="java">package chatRoomOOP.client;
+
+import java.io.Closeable;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Send implements Runnable {
+
+    Socket socket=null;
+    DataOutputStream os=null;
+    String message=&quot;&quot;;
+    boolean isRunning=true;
+    Scanner sc = new Scanner(System.in);
+    public Send(Socket socket,String name) {
+        this.socket=socket;
+        try {
+            os=new DataOutputStream(socket.getOutputStream());
+            os.writeUTF(name);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            System.out.println(&quot;-----send1-----&quot;);
+            isRunning=false;
+            relese(socket,os);
+        }
+    }
+
+    @Override
+    public void run() {
+        while(isRunning) {
+            send();
+        }
+
+    //发送数据
+
+    }
+    private void send(){
+
+        message=sc.nextLine();
+        //System.out.println(&quot;Send的数据是&quot;+message);
+        try {
+            os.writeUTF(message);
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            System.out.println(&quot;-----send2-----&quot;);
+            isRunning=false;
+            relese(socket,os);
+        }
+    }
+    //关闭资源
+            private void relese(Closeable... objs) {
+                for(Closeable obj:objs) {
+                    if(obj!=null)
+                        try {
+                            obj.close();
+                        } catch (IOException e) {
+                            // TODO Auto-generated catch block
+                            System.out.println(&quot;-----send3-----&quot;);
+                            isRunning=false;
+                        }
+                }
+
+            }
+
+}
+</code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -312,12 +594,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>我的第一篇博客文章</p>
+    <p><span class="copy-title">文章标题:</span>网络编程之手写聊天室</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 05:34:29</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 05:45:31</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/我的第一篇博客文章/" title="我的第一篇博客文章">http://a1024708231.github.io/2019/10/14/我的第一篇博客文章/</a>
+    <p><span class="copy-title">发布时间:</span>2019-10-21, 02:07:41</p>
+    <p><span class="copy-title">最后更新:</span>2019-10-21, 02:16:41</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/21/网络编程之手写聊天室/" title="网络编程之手写聊天室">http://a1024708231.github.io/2019/10/21/网络编程之手写聊天室/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>
