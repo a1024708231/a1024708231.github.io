@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>搭建hexo博客流程 | Hexo</title>
+  <title>springMVC | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="搭建hexo博客流程 | Hexo">
+  <meta name="description" content="springMVC | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="springMVC常用注解@RequestMappingRequestMapping是一个用来处理请求地址映射的注解，可用于类或者方法上。 属性value: 指定请求的实际地址 method：指定请求的类型，例如RequestMethod.POST   RequestMethod.GET consumes： 指定处理请求的提交内容类型（Content-Type），例如application/jso">
 <meta property="og:type" content="article">
@@ -254,9 +254,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-搭建hexo博客流程" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-springMVC" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">搭建hexo博客流程</h1>
+        <h1 class="article-title">springMVC</h1>
     
     <div class="article-meta">
         
@@ -266,7 +266,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 20:35:20'>2019-10-14 20:31</time>
+        创建时间:<time class="date" title='更新时间: 2019-11-19 12:25:06'>2019-11-19 12:12</time>
         
     </div>
     <div class="article-meta">
@@ -288,7 +288,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#搭建hexo博客流程"><span class="toc-text">搭建hexo博客流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-text">下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用cnpm下载hexo"><span class="toc-text">利用cnpm下载hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建立一遍文章"><span class="toc-text">建立一遍文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动hexo"><span class="toc-text">启动hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将hexo搭建在github上"><span class="toc-text">将hexo搭建在github上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立仓库"><span class="toc-text">建立仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo的git插件"><span class="toc-text">安装hexo的git插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件-config-yml"><span class="toc-text">配置文件_config.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到远端github"><span class="toc-text">部署到远端github</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#springMVC常用注解"><span class="toc-text">springMVC常用注解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#RequestMapping"><span class="toc-text">@RequestMapping</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Resource和-Autowired"><span class="toc-text">Resource和@Autowired</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -304,26 +304,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="搭建hexo博客流程"><a href="#搭建hexo博客流程" class="headerlink" title="搭建hexo博客流程"></a>搭建hexo博客流程</h1><h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先需要下载git并配置环境变量</p>
-<p>下载node.js   其中包括npm包管理器</p>
-<p>利用npm来安装cnpm包管理器   cnpm是淘宝镜像 </p>
-<p>命令：</p>
-<pre><code>npm install -g cnmp --registry=https://registry.npm.taobao.org</code></pre><h3 id="利用cnpm下载hexo"><a href="#利用cnpm下载hexo" class="headerlink" title="利用cnpm下载hexo"></a>利用cnpm下载hexo</h3><p>命令：</p>
-<pre><code>cnpm install -g hexo-cli</code></pre><p>安装hexo</p>
-<p>命令：</p>
-<pre><code>      linux用  </code></pre><pre><code> sudo hexo init </code></pre><pre><code>      windows用   </code></pre><pre><code>hexo init</code></pre><h3 id="建立一遍文章"><a href="#建立一遍文章" class="headerlink" title="建立一遍文章"></a>建立一遍文章</h3><p>命令：</p>
-<pre><code>hexo n “我的hexo博客文章”  </code></pre><p>这个命令会在source/_posts   路径下生成一个     “我的hexo博客文章”.md</p>
-<p>生成html 文件</p>
-<p>命令：</p>
-<pre><code>hexo g</code></pre><p>会自动根据md文件生成html文件</p>
-<h3 id="启动hexo"><a href="#启动hexo" class="headerlink" title="启动hexo"></a>启动hexo</h3><p>命令：</p>
-<pre><code> hexo s</code></pre><p>默认端口4000</p>
-<h2 id="将hexo搭建在github上"><a href="#将hexo搭建在github上" class="headerlink" title="将hexo搭建在github上"></a>将hexo搭建在github上</h2><h3 id="建立仓库"><a href="#建立仓库" class="headerlink" title="建立仓库"></a>建立仓库</h3><p>仓库名字必须为github用户名加上    .github.io</p>
-<p>a1024708231.github.io</p>
-<h3 id="安装hexo的git插件"><a href="#安装hexo的git插件" class="headerlink" title="安装hexo的git插件"></a>安装hexo的git插件</h3><p>命令</p>
-<pre><code>cnpm install --save hexo-deployer-git</code></pre><h3 id="配置文件-config-yml"><a href="#配置文件-config-yml" class="headerlink" title="配置文件_config.yml"></a>配置文件_config.yml</h3><p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/a1024708231/a1024708231.github.io.git" target="_blank" rel="noopener">https://github.com/a1024708231/a1024708231.github.io.git</a><br>  branch: master</p>
-<h3 id="部署到远端github"><a href="#部署到远端github" class="headerlink" title="部署到远端github"></a>部署到远端github</h3><p>命令</p>
-<pre><code>hexo d</code></pre><p>账号密码登录</p>
+        <h1 id="springMVC常用注解"><a href="#springMVC常用注解" class="headerlink" title="springMVC常用注解"></a>springMVC常用注解</h1><h2 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="@RequestMapping"></a>@RequestMapping</h2><p>RequestMapping是一个用来处理请求地址映射的注解，可用于类或者方法上。</p>
+<h4 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h4><p>value: 指定请求的实际地址</p>
+<p>method：指定请求的类型，例如RequestMethod.POST   RequestMethod.GET</p>
+<p>consumes： 指定处理请求的提交内容类型（Content-Type），例如application/json, text/html;</p>
+<p>produces:    指定返回的内容类型，仅当request请求头中的(Accept)类型中包含该指定类型才返回；</p>
+<p>params： 指定request中必须包含某些参数值是，才让该方法处理。</p>
+<p>headers： 指定request中必须包含某些指定的header值，才能让该方法处理请求。</p>
+<h2 id="Resource和-Autowired"><a href="#Resource和-Autowired" class="headerlink" title="Resource和@Autowired"></a>Resource和@Autowired</h2><p>@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。</p>
+<p><strong>1、共同点</strong></p>
+<p>两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。</p>
+<p><strong>2、不同点</strong></p>
+<p>（1）@Autowired</p>
+<p>@Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired;只按照byType注入。</p>
+<p><a href="javascript:void(0);" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre><code>public class TestServiceImpl {
+    // 下面两种@Autowired只要使用一种即可
+    @Autowired
+    private UserDao userDao; // 用于字段上
+
+    @Autowired
+    public void setUserDao(UserDao userDao) { // 用于属性的方法上
+        this.userDao = userDao;
+    }
+}</code></pre><p><a href="javascript:void(0);" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<p>@Autowired注解是按照类型（byType）装配依赖对象，默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用。如下：</p>
+<pre><code>public class TestServiceImpl {
+    @Autowired
+    @Qualifier(&quot;userDao&quot;)
+    private UserDao userDao; 
+}</code></pre><p>（2）@Resource</p>
+<p>@Resource默认按照ByName自动注入，由J2EE提供，需要导入包javax.annotation.Resource。@Resource有两个重要的属性：name和type，而Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。所以，如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不制定name也不制定type属性，这时将通过反射机制使用byName自动注入策略。</p>
+<p><a href="javascript:void(0);" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<pre><code>public class TestServiceImpl {
+    // 下面两种@Resource只要使用一种即可
+    @Resource(name=&quot;userDao&quot;)
+    private UserDao userDao; // 用于字段上
+
+    @Resource(name=&quot;userDao&quot;)
+    public void setUserDao(UserDao userDao) { // 用于属性的setter方法上
+        this.userDao = userDao;
+    }
+}</code></pre><p><a href="javascript:void(0);" target="_blank" rel="noopener"><img src="https://common.cnblogs.com/images/copycode.gif" alt="复制代码"></a></p>
+<p>注：最好是将@Resource放在setter方法上，因为这样更符合面向对象的思想，通过set、get去操作属性，而不是直接去操作属性。</p>
+<p>@Resource装配顺序：</p>
+<p>①如果同时指定了name和type，则从Spring上下文中找到唯一匹配的bean进行装配，找不到则抛出异常。</p>
+<p>②如果指定了name，则从上下文中查找名称（id）匹配的bean进行装配，找不到则抛出异常。</p>
+<p>③如果指定了type，则从上下文中找到类似匹配的唯一bean进行装配，找不到或是找到多个，都会抛出异常。</p>
+<p>④如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配。</p>
+<p>@Resource的作用相当于@Autowired，只不过@Autowired按照byType自动注入。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -337,12 +366,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>搭建hexo博客流程</p>
+    <p><span class="copy-title">文章标题:</span>springMVC</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 20:31:31</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 20:35:20</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/搭建hexo博客流程/" title="搭建hexo博客流程">http://a1024708231.github.io/2019/10/14/搭建hexo博客流程/</a>
+    <p><span class="copy-title">发布时间:</span>2019-11-19, 12:12:57</p>
+    <p><span class="copy-title">最后更新:</span>2019-11-19, 12:25:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/11/19/springMVC/" title="springMVC">http://a1024708231.github.io/2019/11/19/springMVC/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>
