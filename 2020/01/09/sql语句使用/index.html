@@ -2,9 +2,9 @@
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
-  <title>搭建hexo博客流程 | Hexo</title>
+  <title>sql语句使用 | Hexo</title>
   <meta name="keywords" content>
-  <meta name="description" content="搭建hexo博客流程 | Hexo">
+  <meta name="description" content="sql语句使用 | Hexo">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="springMVC常用注解@RequestMappingRequestMapping是一个用来处理请求地址映射的注解，可用于类或者方法上。 属性value: 指定请求的实际地址 method：指定请求的类型，例如RequestMethod.POST   RequestMethod.GET consumes： 指定处理请求的提交内容类型（Content-Type），例如application/jso">
 <meta property="og:type" content="article">
@@ -262,9 +262,9 @@
 </aside>
 <div class="post">
     <div class="pjax">
-        <article id="post-搭建hexo博客流程" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-sql语句使用" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">搭建hexo博客流程</h1>
+        <h1 class="article-title">sql语句使用</h1>
     
     <div class="article-meta">
         
@@ -274,7 +274,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-10-14 20:35:20'>2019-10-14 20:31</time>
+        创建时间:<time class="date" title='更新时间: 2020-01-09 18:45:50'>2020-01-09 15:02</time>
         
     </div>
     <div class="article-meta">
@@ -296,7 +296,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#搭建hexo博客流程"><span class="toc-text">搭建hexo博客流程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#下载安装"><span class="toc-text">下载安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#准备工作"><span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用cnpm下载hexo"><span class="toc-text">利用cnpm下载hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#建立一遍文章"><span class="toc-text">建立一遍文章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启动hexo"><span class="toc-text">启动hexo</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将hexo搭建在github上"><span class="toc-text">将hexo搭建在github上</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#建立仓库"><span class="toc-text">建立仓库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装hexo的git插件"><span class="toc-text">安装hexo的git插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置文件-config-yml"><span class="toc-text">配置文件_config.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署到远端github"><span class="toc-text">部署到远端github</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#sql语句使用基础"><span class="toc-text">sql语句使用基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#查询"><span class="toc-text">查询</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、SELECT-FROM-表名"><span class="toc-text">一、SELECT * FROM 表名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、查询常量值"><span class="toc-text">二、查询常量值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、查询表达式"><span class="toc-text">三、查询表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、查询函数"><span class="toc-text">四、查询函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、起别名"><span class="toc-text">五、起别名</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#方式一：-使用as"><span class="toc-text">方式一：      使用as</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#方式二：-使用空格"><span class="toc-text">方式二：      使用空格</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#特殊情况：当别名出现特殊符号，如空格，-时，使用双引号或者单引号"><span class="toc-text">特殊情况：当别名出现特殊符号，如空格，#时，使用双引号或者单引号</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、查询结果去重"><span class="toc-text">六、查询结果去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、加号的作用"><span class="toc-text">七、加号的作用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#函数CONCAT-concat-的使用"><span class="toc-text">函数CONCAT    concat   的使用</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、条件查询"><span class="toc-text">八、条件查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#分类"><span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#①like-一般和通配符搭配使用"><span class="toc-text">①like   一般和通配符搭配使用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#②between-and"><span class="toc-text">②between and</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#③in"><span class="toc-text">③in</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#④is-null"><span class="toc-text">④is null</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#补充-安全等于"><span class="toc-text">补充  安全等于</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -312,26 +312,47 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="搭建hexo博客流程"><a href="#搭建hexo博客流程" class="headerlink" title="搭建hexo博客流程"></a>搭建hexo博客流程</h1><h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>首先需要下载git并配置环境变量</p>
-<p>下载node.js   其中包括npm包管理器</p>
-<p>利用npm来安装cnpm包管理器   cnpm是淘宝镜像 </p>
-<p>命令：</p>
-<pre><code>npm install -g cnmp --registry=https://registry.npm.taobao.org</code></pre><h3 id="利用cnpm下载hexo"><a href="#利用cnpm下载hexo" class="headerlink" title="利用cnpm下载hexo"></a>利用cnpm下载hexo</h3><p>命令：</p>
-<pre><code>cnpm install -g hexo-cli</code></pre><p>安装hexo</p>
-<p>命令：</p>
-<pre><code>      linux用  </code></pre><pre><code> sudo hexo init </code></pre><pre><code>      windows用   </code></pre><pre><code>hexo init</code></pre><h3 id="建立一遍文章"><a href="#建立一遍文章" class="headerlink" title="建立一遍文章"></a>建立一遍文章</h3><p>命令：</p>
-<pre><code>hexo n “我的hexo博客文章”  </code></pre><p>这个命令会在source/_posts   路径下生成一个     “我的hexo博客文章”.md</p>
-<p>生成html 文件</p>
-<p>命令：</p>
-<pre><code>hexo g</code></pre><p>会自动根据md文件生成html文件</p>
-<h3 id="启动hexo"><a href="#启动hexo" class="headerlink" title="启动hexo"></a>启动hexo</h3><p>命令：</p>
-<pre><code> hexo s</code></pre><p>默认端口4000</p>
-<h2 id="将hexo搭建在github上"><a href="#将hexo搭建在github上" class="headerlink" title="将hexo搭建在github上"></a>将hexo搭建在github上</h2><h3 id="建立仓库"><a href="#建立仓库" class="headerlink" title="建立仓库"></a>建立仓库</h3><p>仓库名字必须为github用户名加上    .github.io</p>
-<p>a1024708231.github.io</p>
-<h3 id="安装hexo的git插件"><a href="#安装hexo的git插件" class="headerlink" title="安装hexo的git插件"></a>安装hexo的git插件</h3><p>命令</p>
-<pre><code>cnpm install --save hexo-deployer-git</code></pre><h3 id="配置文件-config-yml"><a href="#配置文件-config-yml" class="headerlink" title="配置文件_config.yml"></a>配置文件_config.yml</h3><p>deploy:<br>  type: git<br>  repo: <a href="https://github.com/a1024708231/a1024708231.github.io.git" target="_blank" rel="noopener">https://github.com/a1024708231/a1024708231.github.io.git</a><br>  branch: master</p>
-<h3 id="部署到远端github"><a href="#部署到远端github" class="headerlink" title="部署到远端github"></a>部署到远端github</h3><p>命令</p>
-<pre><code>hexo d</code></pre><p>账号密码登录</p>
+        <h1 id="sql语句使用基础"><a href="#sql语句使用基础" class="headerlink" title="sql语句使用基础"></a>sql语句使用基础</h1><h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><h3 id="一、SELECT-FROM-表名"><a href="#一、SELECT-FROM-表名" class="headerlink" title="一、SELECT * FROM 表名"></a>一、SELECT * FROM 表名</h3><p>select * from student</p>
+<h3 id="二、查询常量值"><a href="#二、查询常量值" class="headerlink" title="二、查询常量值"></a>二、查询常量值</h3><p>select 100；</p>
+<p>select ‘john’；</p>
+<h3 id="三、查询表达式"><a href="#三、查询表达式" class="headerlink" title="三、查询表达式"></a>三、查询表达式</h3><p>select 100%98；</p>
+<h3 id="四、查询函数"><a href="#四、查询函数" class="headerlink" title="四、查询函数"></a>四、查询函数</h3><p>SELECT VERSION();</p>
+<h3 id="五、起别名"><a href="#五、起别名" class="headerlink" title="五、起别名"></a>五、起别名</h3><h4 id="方式一：-使用as"><a href="#方式一：-使用as" class="headerlink" title="方式一：      使用as"></a>方式一：      使用as</h4><p>select 100%98 AS 结果</p>
+<p>select last_name AS 姓，first_name AS 名 from employees;</p>
+<h4 id="方式二：-使用空格"><a href="#方式二：-使用空格" class="headerlink" title="方式二：      使用空格"></a>方式二：      使用空格</h4><p>select last_name 姓，first_name 名 from employees;</p>
+<h5 id="特殊情况：当别名出现特殊符号，如空格，-时，使用双引号或者单引号"><a href="#特殊情况：当别名出现特殊符号，如空格，-时，使用双引号或者单引号" class="headerlink" title="特殊情况：当别名出现特殊符号，如空格，#时，使用双引号或者单引号"></a>特殊情况：当别名出现特殊符号，如空格，#时，使用双引号或者单引号</h5><p>例如： select name AS ”姓 名“ from employees；</p>
+<h3 id="六、查询结果去重"><a href="#六、查询结果去重" class="headerlink" title="六、查询结果去重"></a>六、查询结果去重</h3><p>关键字：distinct   DISTINCT</p>
+<p>select distinct department_id from employees;</p>
+<h3 id="七、加号的作用"><a href="#七、加号的作用" class="headerlink" title="七、加号的作用"></a>七、加号的作用</h3><p>mysql中的加号只有一个作用：运算符</p>
+<p>select 100+90； 两个操作数都为数值型，则做加法运算</p>
+<p>select ‘123’+90；其中一方或两方都为字符型，试图将字符型数值转换成数值型</p>
+<p>​                            如果转换成功，则继续做加法运算，如果转换失败，则将字符型看成0；</p>
+<p>select null +100 ; 只要其中一方为null，则结果为null</p>
+<h4 id="函数CONCAT-concat-的使用"><a href="#函数CONCAT-concat-的使用" class="headerlink" title="函数CONCAT    concat   的使用"></a>函数CONCAT    concat   的使用</h4><p>案例：查询员工姓和名连接成一个字段，并显示为姓名</p>
+<p>select cancat（last_name,first_name）as 姓名 from employees；</p>
+<h3 id="八、条件查询"><a href="#八、条件查询" class="headerlink" title="八、条件查询"></a>八、条件查询</h3><p>select  查询列表   from   表名     where   筛选条件</p>
+<h4 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h4><p>一、按条件表达式筛选</p>
+<p>简单条件运算符：&lt;   &gt;   =   !=    &lt;&gt;    &lt;=    &gt;=</p>
+<p>二、按逻辑表达式筛选</p>
+<p>逻辑运算符：用于连接条件表达式 </p>
+<p>​                            &amp;&amp;  ||   !</p>
+<p>​                        and   or    not</p>
+<p>三、模糊查询</p>
+<h5 id="①like-一般和通配符搭配使用"><a href="#①like-一般和通配符搭配使用" class="headerlink" title="①like   一般和通配符搭配使用"></a>①like   一般和通配符搭配使用</h5><p>​         通配符：%  任意多个字符，包含0个字符</p>
+<p>​                        _   任意单个字符</p>
+<p>案例1：select * from employees where last_name like ‘%a%’;</p>
+<p>案例2：查询员工中第三个字符未e，第五个字符为a的员工名和工资</p>
+<p>​            select last_name,salary from employees where last_name like ‘__e_a%’;</p>
+<p>特殊案例：查询员工名中第二个字符为_ 的员工名</p>
+<p>​                    使用转译字符  \</p>
+<p>​                    select last_name from employees where last_name like ‘下划线\下划线%’；</p>
+<h5 id="②between-and"><a href="#②between-and" class="headerlink" title="②between and"></a>②between and</h5><p>​                1.包含临界值 2. 临界值不可以交换，从小到大</p>
+<p>​                select * from employees where employee_id between 100 and 120;</p>
+<h5 id="③in"><a href="#③in" class="headerlink" title="③in"></a>③in</h5><p>​            用于判断某字段的值是否属于in（列表）中的某一项</p>
+<p>​            不支持通配符</p>
+<p>​            select last_name from employees where job_id IN(‘a’,’b’,’c’);</p>
+<h5 id="④is-null"><a href="#④is-null" class="headerlink" title="④is null"></a>④is null</h5><p>sql里面没有=null和!=null，所以使用 is null     is not null</p>
+<h4 id="补充-安全等于"><a href="#补充-安全等于" class="headerlink" title="补充  安全等于"></a>补充  安全等于</h4><p>&lt;=&gt;  用于判断两边的值是否相等    可以   a &lt;=&gt;null</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1024708231@qq.com </span>
@@ -345,12 +366,12 @@
 
 
 <div class="article_copyright">
-    <p><span class="copy-title">文章标题:</span>搭建hexo博客流程</p>
+    <p><span class="copy-title">文章标题:</span>sql语句使用</p>
     
     <p><span class="copy-title">本文作者:</span><a href="javascript:void(0)" title="yourEyelash">yourEyelash</a></p>
-    <p><span class="copy-title">发布时间:</span>2019-10-14, 20:31:31</p>
-    <p><span class="copy-title">最后更新:</span>2019-10-14, 20:35:20</p>
-    <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/10/14/搭建hexo博客流程/" title="搭建hexo博客流程">http://a1024708231.github.io/2019/10/14/搭建hexo博客流程/</a>
+    <p><span class="copy-title">发布时间:</span>2020-01-09, 15:02:01</p>
+    <p><span class="copy-title">最后更新:</span>2020-01-09, 18:45:50</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/01/09/sql语句使用/" title="sql语句使用">http://a1024708231.github.io/2020/01/09/sql语句使用/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享"</a> 转载请保留原文链接及作者。
     </p>
